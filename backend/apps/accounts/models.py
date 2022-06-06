@@ -6,7 +6,6 @@ from django.contrib.auth.base_user import BaseUserManager
 # Create your models here.
 
 
-
 class UserManager(BaseUserManager):
     def create_user(self, email=None, password=None, **extra_fields):
         if not email:
@@ -39,4 +38,11 @@ class User(AbstractUser):
     middle_name = models.CharField('Отчество', max_length=150, blank=True)
     email = models.EmailField("Email", unique=True)
     phone = models.CharField('Номер телефона',null=True,max_length=10)
-    work_status = models.CharField('Статус работы', max_length=1000, blank=True)
+    summary = models.TextField('Резюме', max_length=10000, blank=True)
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = []
+
+    objects = UserManager()
+
+
+

@@ -4,12 +4,6 @@ from django.contrib import admin
 
 from .models import *
 
-@admin.register(CategoryJob)
-class CategoryAdmin(admin.ModelAdmin):
-    list_display = ['name', 'slug']
-    prepopulated_fields = {'slug':('name', )}
-    
-
 
 
 
@@ -19,6 +13,11 @@ class CategoryAdmin(admin.ModelAdmin):
 class JobAdmin(admin.ModelAdmin):
     list_display = [
         'name',
-        'type_of_work',
-        'description',
+        'salary',
+        'requirements',
+        'responsibilities',
+        'working_conditions',
+        'an_experience',
+        'schedule',
+        'education',
     ]
