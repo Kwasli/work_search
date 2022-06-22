@@ -3,20 +3,12 @@
 {% block index %}
 <h1></h1>
     {% if not request.user.is_authenticated %}
+    <h3>Войдите или зарегестрируйтесь</h3>
     <li><a href="{% url 'sign_in' %}">Войти</a></li>
     <li><a href="{% url 'register' %}">Регистрация</a></li>
     {% else %}
+    <h3>если хотите выйти из аккаунта</h3>
     <li><a href="{% url 'logout' %}">Выйти</a></li>
     {% endif %}
-
-{% endblock %}
-
-
-
-
-{% block job %}
-
-
-<h1>{{job.name}}</h1>
 
 {% endblock %}

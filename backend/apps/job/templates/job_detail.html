@@ -1,8 +1,15 @@
 {% extends 'base.html' %}
 
-{% block job %}
-
-{{job.name}}
-<h1></h1>
-
+{% block content %}
+<h1>Название: {{job.name}}</h1>
+<h1>Зарплата: {{job.salary}}</h1>
+<h1>Опыт работы: {{job.an_experience}}</h1>
+<h2>Требования:</h2>
+<h3>{{job.requirements}}</h3>
+<h2>Обязаности: </h2>
+<h3>{{job.responsibilities}}</h3>
+<h2>Условия: </h2>
+<h3>{{job.working_conditions}}</h3>
+<h2>График работы:{{job.schedule}}</h2>
+<h2>Оброзование: {{job.education}}</h2>
 {% endblock %}

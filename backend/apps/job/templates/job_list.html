@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+{% block list %}
+
+
+{% for job in object_list %}
+
+
+<h2><a href="{% url 'job_detail' job.id %}">{{job.name}}</a></h2>
+<h2>Зарплата: {{job.salary}}</h2>
+<h1>------------------------------------</h1>
+{% endfor %}
+
+{% endblock %}
