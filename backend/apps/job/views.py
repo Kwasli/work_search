@@ -4,6 +4,7 @@ from .models import *
 from django.views.generic import TemplateView, DetailView, ListView
 
 class IndexPage(TemplateView):
+    model = Job
     template_name = "index.html"
     context_object_name = "job"
 
