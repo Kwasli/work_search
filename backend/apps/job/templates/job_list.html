@@ -3,12 +3,28 @@
 {% block list %}
 
 
-{% for job in object_list %}
+{% for job in jobs %}
+
+<!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+<div class="card w-75">
+    <div class="card-body">
+      <h5 class="card-title">{{job.name}}</h5>
+      <p class="card-text">{{job.salary}}</p>
+      <a href="{% url 'job_detail' job.id %}" class="btn btn-primary">Подробнее</a>
+    </div>
+  </div>
 
 
-<h2><a href="{% url 'job_detail' job.id %}">{{job.name}}</a></h2>
-<h2>Зарплата: {{job.salary}}</h2>
-<h1>------------------------------------</h1>
+<!-- JavaScript Bundle with Popper -->
+
+
+
 {% endfor %}
 
 {% endblock %}
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>

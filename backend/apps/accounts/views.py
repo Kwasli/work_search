@@ -38,3 +38,9 @@ def user_logout(request):
     if request.user.is_authenticated:
         logout(request)
     return redirect('index')
+
+
+class UserEntryView(TemplateView):
+    template_name = 'job_entry.html'
+    form_class = UserEntryForm
+    success_url = '/'

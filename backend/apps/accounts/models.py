@@ -1,3 +1,4 @@
+from tkinter.tix import Tree
 from django.db import models
 from django.contrib.auth.models import AbstractUser
 from django.contrib.auth.base_user import BaseUserManager
@@ -38,7 +39,6 @@ class User(AbstractUser):
     middle_name = models.CharField('Отчество', max_length=150, blank=True)
     email = models.EmailField("Email", unique=True)
     phone = models.CharField('Номер телефона',null=True,max_length=10)
-    summary = models.TextField('Резюме', max_length=10000, blank=True)
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = []
 
