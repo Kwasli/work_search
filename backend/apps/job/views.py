@@ -20,3 +20,12 @@ class JobListView(ListView):
     context_object_name = 'jobs'
 
 
+class JobSearchView(ListView):
+    model = Job
+    template_name = 'job_list.html'
+    context_object_name = 'jobs'
+
+    def get_queryset(self):
+        search_text = self.request.GET.get('query')
+        q = self.model.objects.filter(name__icontains=search_text)
+        return q

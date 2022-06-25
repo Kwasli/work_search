@@ -45,7 +45,7 @@
 
       <ul class="ambitios_menu">
 
-        <li><a href="{% url 'index' %}" class="ambitios_active"><span><span>Главная</span></span></a>
+        <li><a href="{% url 'index' %}"><span><span>Главная</span></span></a>
         </li>
 
         <li><a href="{% url 'job_list' %}"><span><span>Вакансии</span></span></a></li>
@@ -59,6 +59,12 @@
     {% endif %}
       </ul>
 
+        <form action="{% url 'search' %}" method="get">
+          <div class="input-icon">
+            <span class="input-icon-addon"></span>
+            <input name="query" type="text" value="" class="form-control" placeholder="Поиск" aria-label="Search in website">
+          </div>
+        </form>
       <!-- EOF menu --> 
 
     </div>
@@ -178,7 +184,7 @@
 
     <ul class="ambitios_menu">
 
-      <li><a href="{% url 'index' %}" class="ambitios_active"><span><span>Главная</span></span></a></li>
+      <li><a href="{% url 'index' %}"><span><span>Главная</span></span></a></li>
 
       <li><a href="{% url 'job_list' %}"><span><span>Вакансии</span></span></a></li>
 
