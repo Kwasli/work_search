@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block job_it_list %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+{% for job_its in job_it %}
+<div class="card w-75">
+  <div class="card-body">
+    <h5 class="card-title">{{job_its.name}}</h5>
+    <p class="card-text">{{job_its.salary}}</p>
+    <a href="{% url 'job_it_detail' job_its.id %}" class="btn btn-secondary">Подробнее</a>
+  </div>
+</div>
+{% endfor %}
+
+
+
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+{% endblock %}

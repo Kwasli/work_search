@@ -1,25 +1,22 @@
 {% extends 'base.html' %}
 
-{% block content %}
-
-
-
+{% block job_it_detail %}
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
 
-<div class="card w-100" style="width: 18rem;">
+<div class="card w-75" style="width: 18rem;">
     <div class="card-body">
-      <h5 class="card-title">{{job.name}}</h5>
-      <h6 class="card-subtitle mb-2 text-muted">{{job.salary}}</h6>
-      <p class="card-text">Опыт работы: {{job.an_experience}}</p>
-      <p class="card-text">График работы: {{job.schedule}}</p>
-      <p class="card-text">Оброзование: {{job.education}}</p>
+      <h5 class="card-title">{{job_it.name}}</h5>
+      <h6 class="card-subtitle mb-2 text-muted">{{job_it.salary}}</h6>
+      <p class="card-text">Опыт работы: {{job_it.an_experience}}</p>
+      <p class="card-text">График работы: {{job_it.schedule}}</p>
+      <p class="card-text">Оброзование: {{job_it.education}}</p>
       <p class="card-text">Требования для работы: </p>
-      <p class="card-text">{{job.requirements}}</p>
+      <p class="card-text">{{job_it.requirements}}</p>
       <p class="card-text">Обязаности:</p>
-      <p class="card-text">{{job.responsibilities}}</p>
+      <p class="card-text">{{job_it.responsibilities}}</p>
       <p class="card-text">Условия работы: </p>
-      <p class="card-text">{{job.working_conditions}}</p>
+      <p class="card-text">{{job_it.working_conditions}}</p>
 
       <div class="d-grid gap-2">
         <a href="{% url 'job_entry' %}" class="btn btn-secondary">Откликнутся</a>
@@ -28,6 +25,8 @@
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+
+
 
 
 {% endblock %}

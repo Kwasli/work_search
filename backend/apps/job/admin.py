@@ -21,3 +21,17 @@ class JobAdmin(admin.ModelAdmin):
         'schedule',
         'education',
     ]
+
+
+@admin.register(JobIT)
+class JobITAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'salary',
+        'requirements',
+        'responsibilities',
+        'working_conditions',
+        'an_experience',
+        'schedule',
+        'education',
+    ]

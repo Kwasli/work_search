@@ -47,17 +47,18 @@
 
       <ul class="ambitios_menu">
 
-        <li><a href="{% url 'index' %}"><span><span>Главная</span></span></a>
+        <li ><a href="{% url 'index' %}" class="ambitios_active"><span><span>Главная</span></span></a>
         </li>
 
         <li><a href="{% url 'job_list' %}"><span><span>Вакансии</span></span></a></li>
+        <li><a href="{% url 'job_it_list' %}" class="ambitios_active"><span><span>Работа в IT сфере</span></span></a></li>
 
         {% if not request.user.is_authenticated %}
     
-    <li><a href="{% url 'sign_in' %}">Войти</a></li>
-    <li><a href="{% url 'register' %}">Регистрация</a></li>
+    <li><a href="{% url 'sign_in' %}"><span><span>Войти</span></span></a></li>
+    <li><a href="{% url 'register' %}" class="ambitios_active"><span><span>Регистрация</span></span></a></li>
     {% else %}
-    <li><a href="{% url 'logout' %}">Выйти</a></li>
+    <li><a href="{% url 'logout' %}"><span><span>Выйти</span></span></a></li>
     {% endif %}
       </ul>
       <div style="width: 30%;" class="my-2 my-md-0 flex-grow-1 flex-md-grow-0 order-first order-md-last">
@@ -123,14 +124,11 @@
 {% endblock %}
 
 
+{% block job_it_list %}
+{% endblock %}
 
-
-
-
-
-
-
-
+{% block job_it_detail %}
+{% endblock %}
 
 
 
@@ -190,19 +188,19 @@
 
     <ul class="ambitios_menu">
 
-      <li><a href="{% url 'index' %}"><span><span>Главная</span></span></a></li>
+      <li ><a href="{% url 'index' %}" class="ambitios_active"><span><span>Главная</span></span></a>
+      </li>
 
       <li><a href="{% url 'job_list' %}"><span><span>Вакансии</span></span></a></li>
+      <li><a href="{% url 'job_it_list' %}" class="ambitios_active"><span><span>Работа в IT сфере</span></span></a></li>
 
-    {% if not request.user.is_authenticated %}
-    
-    <li><a href="{% url 'sign_in' %}">Войти</a></li>
-    <li><a href="{% url 'register' %}">Регистрация</a></li>
-    {% else %}
-    <li><a href="{% url 'logout' %}">Выйти</a></li>
-    {% endif %}
-
-
+      {% if not request.user.is_authenticated %}
+  
+  <li><a href="{% url 'sign_in' %}"><span><span>Войти</span></span></a></li>
+  <li><a href="{% url 'register' %}" class="ambitios_active"><span><span>Регистрация</span></span></a></li>
+  {% else %}
+  <li><a href="{% url 'logout' %}"><span><span>Выйти</span></span></a></li>
+  {% endif %}
     </ul>
 
     <!-- EOF menu --> 
